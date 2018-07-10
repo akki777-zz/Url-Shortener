@@ -1,0 +1,15 @@
+{
+  "name": "url-shortner",
+  "version": "1.0.0",
+  "description": "Url Shortner",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akshay Mahajan",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-config-google": "^0.9.1"
+  }
+}

@@ -1,0 +1,10 @@
+###
+GET http://127.0.0.1:7001/MTAwMTA= HTTP/1.1
+
+####
+POST http://127.0.0.1:7001/shorten HTTP/1.1
+Content-Type: application/json
+
+{
+    "url" : "http://example.com"
+}

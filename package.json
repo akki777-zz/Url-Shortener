@@ -1,15 +1,28 @@
 {
   "name": "url-shortner",
   "version": "1.0.0",
-  "description": "Url Shortner",
+  "description": "A simple URL shortener built with Node.js and MongoDB",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint",
+    "start": "node app.js",
+    "lint": "eslint --fix \"**/*.js\""
+  },
+  "engines": {
+    "node": "8.9.1"
   },
   "author": "Akshay Mahajan",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^5.1.0",
     "eslint-config-google": "^0.9.1"
+  },
+  "dependencies": {
+    "atob": "^2.1.1",
+    "body-parser": "^1.18.3",
+    "btoa": "^1.2.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.2",
+    "mongoose-auto-increment": "^5.0.1"
   }
 }

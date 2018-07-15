@@ -16,10 +16,10 @@ const urlSchema = new mongoose.Schema({
 urlSchema.plugin(autoIncrement.plugin, {
     model: 'URL',
     field: '_id',
-    startAt: 10000,
+    startAt: 100,
 });
 
-const URL = module.exports = mongoose.model('URL', urlSchema);
+const URL = mongoose.model('URL', urlSchema);
 
 // all CRUD operations here
 

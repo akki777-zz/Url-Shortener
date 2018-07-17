@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Url Shortener</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="./imports.html" />
+</head>
+
+<body>
+    <paper-toast text="Copied to clipboard" id="toast_copy"></paper-toast>
+
+    <span id="header">URL Shortener</span>
+
+    <img src="empty-state.svg" id="background-image-left">
+    <img src="zero-state.svg" id="background-image-right">
+
+
+    <div class="form_container">
+        <input id="input_shorten" placeholder="Paste a link to shorten it..." type="url" name="url" autocomplete="off" autofocus="off"
+            autocapitalize="off" autocorrect="off">
+        <div role="button" id="btn_shorten">Shorten</div>
+
+        <div id="input_error">Invalid URL</div>
+    </div>
+
+    <div id="short_url_container">
+        <a id="text_short_url" target="_blank"></a>
+        <div>
+            <paper-icon-button id="copy_icon" src="copy.svg"></paper-icon-button>
+            <paper-tooltip for="copy_icon" position="right">Copy link</paper-tooltip>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

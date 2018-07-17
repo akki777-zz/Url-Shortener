@@ -60,6 +60,16 @@ function copyToClipboard() {
 }
 
 /**
+ * Show Short URL.
+ * @param {String} shortUrl
+ */
+function showShortUrl(shortUrl) {
+    outputShorten.innerText = `http://localhost:7001/${shortUrl})`;
+    outputShorten.setAttribute('href', `http://localhost:7001/${shortUrl})`);
+    outputShortenContainer.classList.add('visible');
+}
+
+/**
  * Calls the Shorten-Url API.
  * @param {String} fullUrl
  */
@@ -69,27 +79,24 @@ function shortenUrl(fullUrl) {
     };
 
     fetch('http://localhost:7001/shorten', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify(request),
-    })
-    .then((response) => {
-        if (response.ok) {
-            return Promise.resolve(response);
-          } else {
-            return Promise.reject(new Error(response.statusText));
-          }
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        console.log('Request succeeded with JSON response', data);
-        outputShorten.innerText = `http://localhost:7001/${data.shortCode})`;
-        outputShorten.setAttribute('href', `http://localhost:7001/${data.shortCode})`);
-        outputShortenContainer.classList.add('visible');
-    })
-    .catch((error) => {
-        console.log('Request failed', error);
-    });
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify(request),
+        })
+        .then((response) => {
+            if (response.ok) {
+                return Promise.resolve(response);
+            } else {
+                return Promise.reject(new Error(response.statusText));
+            }
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            showShortUrl(data.shortCode);
+        })
+        .catch((error) => {
+            console.log('Request failed', error);
+        });
 }

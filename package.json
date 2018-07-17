@@ -15,7 +15,8 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^5.1.0",
-    "eslint-config-google": "^0.9.1"
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-html": "^4.0.5"
   },
   "dependencies": {
     "atob": "^2.1.1",
